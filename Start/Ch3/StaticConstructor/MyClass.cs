@@ -9,15 +9,20 @@ public class MyClass {
 
     // TODO: the static constructor is only called once, has no parameters,
     // is not called directly, and can not be inherited/overloaded
-
+    static MyClass()
+    {
+        CallCounter = 0;
+        LastCaller = "Nobody";
+        Console.WriteLine("Static constructor has been called");
+    }
 
     // Regular constructor
     public MyClass() {
         Console.WriteLine("Regular constructor has been called");
     }
-
     // Instance Method
-    public void MethodA() {
+    public void MethodA()
+    {
         CallCounter++;
         LastCaller = "MethodA";
     }

@@ -6,10 +6,13 @@
 // They contain only static members (methods, properties, constants)
 // They cannot be instantiated, and are sealed by default
 // (so they cannot be derived from)
-public class Converter {
+public static class Converter {
     public static double INCH_CM_CONVERT = 2.54;
 
-    public static double InToCm(double inches) {
+    //public int temp;
+
+    public static double InToCm(double inches)
+    {
         return inches * INCH_CM_CONVERT;
     }
 
@@ -17,3 +20,9 @@ public class Converter {
         return centimeters / INCH_CM_CONVERT;
     }
 }
+
+// Static class must derived from objects
+// public static class NewConv : Converter
+// {
+    
+// }
