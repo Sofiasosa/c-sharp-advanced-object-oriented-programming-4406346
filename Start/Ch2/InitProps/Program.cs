@@ -8,10 +8,10 @@ Employee emp2 = new Employee("Jane", "Deaux", 2, "Sales");
 
 Console.WriteLine(emp1);
 emp1.Department = "Tech Support";
-emp1.ID = 5; 
+// emp1.ID = 5; Compile error 
 Console.WriteLine(emp1);
 
 Console.WriteLine(emp2);
 emp2.LastName = "Dough";
-emp2.ID = 3; 
+// emp2.ID = 3; Compile error
 Console.WriteLine(emp2);

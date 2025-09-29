@@ -2,7 +2,7 @@
 // init-only modifier
 
 public class Employee {
-    private int _id;
+    private readonly int _id; // can only be initialize but not change after
 
     public Employee() {}
 
@@ -16,7 +16,7 @@ public class Employee {
     // The init keyword means that a value is assigned only during construction
     public int ID {
         get => _id;
-        set => _id = value;
+        init => _id = value;
     }
     public string? Department {
         get; set;
@@ -27,6 +27,11 @@ public class Employee {
     public string? LastName {
         get; set;
     }
+
+    // public void ChangeId(int newId)
+    // {
+    //     ID = newId;
+    // } NO SE PUEDE
 
     public override string ToString() => $"{FirstName} {LastName}, ID:{ID} in {Department}";
 }
