@@ -17,11 +17,9 @@ public abstract class Vehicle
     }
 
     // By declaring a member to be abstract, we can require subclasses to implement it
-    public virtual void SoundHorn() {
-        Console.WriteLine("Add horn sound here");
-    }
+    public abstract void SoundHorn();
 
-    public virtual int WheelCount { get; }
+    public abstract int WheelCount { get; }
 
     public override string ToString() {
         return $"{GetType()}: {Make} {Model}, Wheels: {WheelCount}";
@@ -31,10 +29,25 @@ public abstract class Vehicle
 // Declare sublasses that inherit from the abstract class
 public class Car : Vehicle
 {
-    public Car() {}
+    public Car() { }
+
+    public override int WheelCount => 4;
+
+    public override void SoundHorn()
+    {
+        Console.WriteLine("Car Horn");
+    }
 }
 
 public class Motorcycle : Vehicle
 {
-    public Motorcycle() {}
+    public Motorcycle() { }
+
+    public override int WheelCount => 2;
+
+
+    public override void SoundHorn()
+    {
+        Console.WriteLine("Motorcycle Horn");
+    }
 }

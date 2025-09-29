@@ -1,31 +1,37 @@
 // Example file for Advanced C#: Object Oriented Programming by Joe Marini
 // Solution to the Employee Class challenge
 
-public class Employee {
+// Employee base class can not be instantiate
+// Adjustpay required
+// hourly and salry can not be subclass 
+public abstract class Employee
+{
     private static int _empCount = 0;
     protected static int IDStart;
-    
-    static Employee() {
+
+    static Employee()
+    {
         IDStart = 1000;
     }
 
-    public Employee() {
+    public Employee()
+    {
         Employee._empCount++;
         ID = Employee.IDStart++;
     }
 
     public static int EmployeeCount { get => _empCount; }
 
-    public int ID {get; init;}
-    public required string Department {get; set;}
-    public required string FullName {get; set;}
+    public int ID { get; init; }
+    public required string Department { get; set; }
+    public required string FullName { get; set; }
 
-    public virtual void AdjustPay(decimal percentage) {}
+    public abstract void AdjustPay(decimal percentage);
 
     public override string ToString() => $"{ID}:{FullName}, {Department} ";
 }
 
-public class HourlyEmployee : Employee {
+public sealed class HourlyEmployee : Employee {
     public HourlyEmployee() {}
 
     public decimal PayRate {get; set;}
@@ -36,7 +42,7 @@ public class HourlyEmployee : Employee {
     }
 }
 
-public class SalariedEmployee : Employee {
+public sealed class SalariedEmployee : Employee {
     public SalariedEmployee() {}
 
     public decimal Salary {get; set;}

@@ -38,5 +38,5 @@ public class D : C {
 public class E : D {
     public E() {}
 
-    public override void Func2() {}
+    public override void Func2() {} // con b sealed, c can no longer override
 }

@@ -2,7 +2,7 @@
 // Defining abstract classes
 
 // Declare an abstract base class to prevent direct instantiation
-public class Vehicle
+public abstract class Vehicle
 {
     public Vehicle() {}
 
@@ -41,8 +41,8 @@ public class Motorcycle : Vehicle
     public Motorcycle() {
     }
 
-    public override void SoundHorn()
-    {
-        Console.WriteLine("Honk Honk");
-    }
+    // public override void SoundHorn()
+    // {
+    //     Console.WriteLine("Honk Honk");
+    // }
 }
